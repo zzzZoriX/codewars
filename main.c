@@ -129,3 +129,83 @@ Good luck :)
 //
 //     return 0;
 // }    COMPLETE!!!!!!
+
+/*
+* Given a month as an integer from 1 to 12, return to which quarter of the year it belongs as an integer number.
+
+For example: month 2 (February), is part of the first quarter; month 6 (June), is part of the second quarter; and month 11 (November), is part of the fourth quarter.
+
+Constraint:
+
+1 <= month <= 12
+
+*/
+
+// int quarter_of(int month) {
+//     if (month < 12)
+//         return (month - month % 3) / 3;
+//
+//     return 1;
+// }
+//
+// int main() {
+//     printf("%d\n", quarter_of(5)); // 2
+//     printf("%d\n", quarter_of(12)); // 1
+//     printf("%d", quarter_of(1)); // 1
+//
+//     return 0;
+// } уебанское задание
+
+// https://www.codewars.com/kata/5626b561280a42ecc50000d1/train/c
+// #include <stddef.h>
+// #include <math.h>
+// #include <stdlib.h>
+// #include <string.h>
+//
+// typedef unsigned long long ull;
+//
+// bool validate(int num) {
+//     char str[20];
+//     sprintf(str, "%d", num);
+//     int start = num;
+//
+//     double result = 0;
+//     ull power = strlen(str);
+//
+//     while (num > 0.1) {
+//         result += pow(num % 10, (double)power--);
+//
+//         num /= 10;
+//     }
+//
+//     return result == start;
+// }
+//
+// ull *sum_dig_pow(ull a, ull b, ull *results, size_t *length) {
+//     *length = 0;
+//
+//     for (ull n = a; n <= b; ++n) {
+//         if (validate(n)) {
+//             ++(*length);
+//
+//             results[(*length) - 1] = n;
+//         }
+//     }
+//
+//     return results;
+// }
+//
+// int main() {
+//     ull* results = malloc(100);
+//     size_t l;
+//
+//     results = sum_dig_pow(1, 100, results, &l);
+//
+//     for (ull i = 0; i < l; ++i) {
+//         printf("%zu ", results[i]);
+//     }
+//
+//     free(results);
+//
+//     return 0;
+// }    ДАДАДАДАДАДАДАДАД + 10КЮ
