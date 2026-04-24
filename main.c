@@ -209,3 +209,100 @@ Constraint:
 //
 //     return 0;
 // }    ДАДАДАДАДАДАДАДАД + 10КЮ
+
+// http://codewars.com/kata/5648b12ce68d9daa6b000099/train/c
+
+// #include <stddef.h>
+//
+// int bus_terminus (size_t nb_stops, const short bus_stops[nb_stops][2]){
+//     auto bus = 0;
+//
+//     for (size_t i = 0; i < nb_stops; ++i) {
+//         bus += bus_stops[i][0];
+//         bus -= bus_stops[i][1];
+//     }
+//
+//     return bus;
+// }
+//
+// int main(void) {
+//     short a[3][2] = {
+//         {1, 0}, {3, 1}, {5, 6}
+//     };
+//
+//     auto t = bus_terminus(3, a);
+//
+//     printf("%d", t);
+//
+//     return 0;
+// }        +22кю
+
+///     119кю (^ w ^)
+
+// https://www.codewars.com/kata/6288de23ab7ede0031602521/train/c
+// #include <stdlib.h>
+// #include <string.h>
+//
+// void dtob(char* result, const int n, const int s) {
+//     for (int i = s - 1; i >= 0; --i) {
+//         auto k = n >> i;
+//
+//         if (k & 1)
+//             result[s - i - 1] = '1';
+//         else
+//             result[s - i - 1] = '0';
+//     }
+// }
+//
+// void ipv4_to_binary(const char *ipv4_addr, char *ipv4_binary)
+// {
+//     *ipv4_binary = '\0';
+//     const auto l = strlen(ipv4_addr);
+//     char buffer[4], bin[9];
+//     buffer[3] = '\0';
+//     bin[8] = '\0';
+//     int count = 0, index = 0;
+//
+//     for (auto i = 0; i < l; ++i) {
+//         if (ipv4_addr[i] == '.') {
+//             buffer[index] = '\0';
+//
+//             dtob(bin, atoi(buffer), 8);
+//
+//             char* p = ipv4_binary + 9 * count++;
+//
+//             strcpy(p, bin);
+//
+//             *(p + 8) = '.';
+//
+//             index = 0;
+//
+//             strcpy(bin, "\0");
+//             strcpy(buffer, "\0");
+//         }
+//         else {
+//             buffer[index++] = ipv4_addr[i];
+//         }
+//     }
+//
+//     buffer[index] = '\0';
+//
+//     dtob(bin, atoi(buffer), 8);
+//
+//     char* p = ipv4_binary + 9 * count++;
+//
+//     strcpy(p, bin);
+//
+//     *(ipv4_binary + 9 * count) = '\0';
+// }
+//
+// int main(void) {
+//     char* a = "255.255.255.252";
+//     char r[37];
+//
+//     ipv4_to_binary(a, r);
+//
+//     printf("%s", r);
+//
+//     return 0;
+// }        +8кю
